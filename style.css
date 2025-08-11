@@ -24,3 +24,21 @@ footer {
   bottom: 0;
   width: 100%;
 }
+
+#startSurveyBtn {
+  display: block;
+  margin: 30px auto 10px auto;
+  padding: 18px 48px;
+  font-size: 1.5rem;
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 500ms;
+}
+
+#startSurveyBtn:hover {
+  background-color: #285f29;
+}
