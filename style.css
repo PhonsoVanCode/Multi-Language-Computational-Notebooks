@@ -42,3 +42,22 @@ footer {
 #startSurveyBtn:hover {
   background-color: #285f29;
 }
+
+#participantID {
+  display: block;
+  margin: 20px auto 30px auto;
+  padding: 14px 18px;
+  font-size: 1.2rem;
+  border: 2px solid #4CAF50;
+  border-radius: 8px;
+  background: #fff;
+  color: #333;
+  box-shadow: 0 2px 8px rgba(76, 175, 80, 0.08);
+  outline: none;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+#participantID:focus {
+  border-color: #285f29;
+  box-shadow: 0 0 0 2px #b2dfdb;
+}
