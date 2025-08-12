@@ -64,3 +64,27 @@ document.addEventListener("DOMContentLoaded", function() {
     } 
     
 });
+
+document.addEventListener('DOMContentLoaded', function () {
+  const timerLabel = document.getElementById('timerLabel');
+  const timerBar = document.getElementById('timerBar');
+  const totalSeconds = 15 * 60;
+  let remaining = totalSeconds;
+
+  function updateTimer() {
+    const min = Math.floor(remaining / 60);
+    const sec = remaining % 60;
+    timerLabel.textContent = `${min}:${sec.toString().padStart(2, '0')}`;
+    timerBar.style.width = `${(remaining / totalSeconds) * 100}%`;
+    if (remaining > 0) {
+      remaining--;
+    } else {
+      clearInterval(timerInterval);
+      timerLabel.textContent = "Time's up!";
+      timerBar.style.width = '0%';
+    }
+  }
+
+  updateTimer();
+  const timerInterval = setInterval(updateTimer, 1000);
+});
