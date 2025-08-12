@@ -25,7 +25,7 @@ footer {
   width: 100%;
 }
 
-#startSurveyBtn {
+.surveyButton {
   display: block;
   margin: 30px auto 10px auto;
   padding: 18px 48px;
@@ -39,7 +39,7 @@ footer {
   transition: 500ms;
 }
 
-#startSurveyBtn:hover {
+.surveyButton:hover {
   background-color: #285f29;
 }
 
