@@ -1,90 +1,125 @@
-let participantID;
-
-// common
-document.addEventListener("DOMContentLoaded", function() {
-  participantID = new URLSearchParams(window.location.search).get("ParticipantID")
-});
-
-// index.html
 document.addEventListener("DOMContentLoaded", function() {
 
-    const participantID = document.getElementById('participantID');
-    const surveyButton1 = document.getElementById('surveyButton1');
-    const surveyLink1 = document.getElementById('surveyLink1');
+    participantID = new URLSearchParams(window.location.search).get("participant_id");
+  
+    state = new URLSearchParams(window.location.search).get("state");
 
-    if (surveyButton1 && surveyLink1 && participantID) {
-        surveyButton1.onclick = function() {
-            const id = participantID.value.trim();
-            if (id) {
-                const link = `https://migroup.qualtrics.com/jfe/form/SV_9QQGJz15kcDcfGe?ParticipantID=${encodeURIComponent(id)}`;
-                surveyLink1.href = link;
-                surveyLink1.click();
-            } else {
-                alert('Please insert your ParticipantID');
+    const surveyButton = document.getElementById('surveyButton');
+    const surveyLink = document.getElementById('surveyLink');
+
+    const taskType = participantID.substring(0, 2);
+    const extensionType = participantID.substring(2, 4);
+
+    const surveyLinkWithoutExtension = `https://migroup.qualtrics.com/jfe/form/SV_a3pk2o0B2n1lAuG?participant_id=${encodeURIComponent(participantID)}`;
+    const surveyLinkWithExtension = `https://migroup.qualtrics.com/jfe/form/SV_0j2gO9KztrHKJ0O?participant_id=${encodeURIComponent(participantID)}`;
+    const surveyLinkPost = `https://migroup.qualtrics.com/jfe/form/SV_9X2uoov67AvuDf8?participant_id=${encodeURIComponent(participantID)}`;
+
+    if (!participantID || participantID.length < 4) {
+        alert("Ungültige Teilnehmer-ID.");
+     }
+
+    switch (state) {
+
+        case "from_pre":
+            state = 'doTaskOne';
+        break;
+
+        case "from_withoutExtension":
+            if(extensionType==='OW') {
+                state = 'doTaskTwo';
             }
-        };
-    } 
-});
+            if(extensionType==='WO') {
+                state = 'post';
+            }
+        break;
 
-// 1.html
-document.addEventListener("DOMContentLoaded", function() {
+        case "from_withExtension":
+            if(extensionType==='WO') {
+                state = 'doTaskTwo';
+            }
+            if(extensionType==='OW') {
+                state = 'post';
+            }        
+        break;
+    }
 
-    const surveyButton2 = document.getElementById('surveyButton2');
-    const surveyLink2 = document.getElementById('surveyLink2');
+    switch (state) {
+        case "doTaskOne":
+            if(extensionType==='OW') {
+                document.getElementById('withoutExtension').style.display = 'block';
+                surveyLink.href = surveyLinkWithoutExtension;
+            }
+            if(extensionType==='WO') {
+                document.getElementById('withExtension').style.display = 'block';
+                surveyLink.href = surveyLinkWithExtension;
+            }  
+            
+            document.getElementById('timerContainer').style.display = 'block';
+            
+            if(taskType==='AB') {
+                document.getElementById('taskA').style.display = 'block';
+            }
+            if(taskType==='BA') {
+                document.getElementById('taskB').style.display = 'block';
+            }    
+        break;
 
-    surveyButton2.onclick = function() {
-        surveyLink2.href = `https://migroup.qualtrics.com/jfe/form/SV_a3pk2o0B2n1lAuG?ParticipantID=${encodeURIComponent(participantID)}`;
-        surveyLink2.click();
-    } 
-    
-});
+        case "doTaskTwo":
+            if(extensionType==='OW') {
+                document.getElementById('withExtension').style.display = 'block';
+                surveyLink.href = surveyLinkWithExtension;
+            }
+            if(extensionType==='WO') {
+                document.getElementById('withoutExtension').style.display = 'block';
+                surveyLink.href = surveyLinkWithoutExtension;
+            }
 
-// 2.html
-document.addEventListener("DOMContentLoaded", function() {
+            document.getElementById('timer').style.display = 'block';
 
-    const surveyButton3 = document.getElementById('surveyButton3');
-    const surveyLink3 = document.getElementById('surveyLink3');
+            if(taskType==='AB') {
+                document.getElementById('taskB').style.display = 'block';
+            }
+            if(taskType==='BA') {
+                document.getElementById('taskA').style.display = 'block';
+            }    
+        break;
 
-    surveyButton3.onclick = function() {
-        surveyLink3.href = `https://migroup.qualtrics.com/jfe/form/SV_0j2gO9KztrHKJ0O?ParticipantID=${encodeURIComponent(participantID)}`;
-        surveyLink3.click();
-    } 
-    
-});
+        case "post":
+            document.getElementById('post').style.display = 'block';
+                surveyLink.href = surveyLinkPost;
+        break;
+    }
 
-// 3.html
-document.addEventListener("DOMContentLoaded", function() {
+    surveyButton.onclick = function() {
+        surveyLink.click();
+    }
 
-    const surveyButton4 = document.getElementById('surveyButton4');
-    const surveyLink4 = document.getElementById('surveyLink4');
-
-    surveyButton4.onclick = function() {
-        surveyLink4.href = `https://migroup.qualtrics.com/jfe/form/SV_9X2uoov67AvuDf8?ParticipantID=${encodeURIComponent(participantID)}`;
-        surveyLink4.click();
-    } 
-    
 });
 
 document.addEventListener('DOMContentLoaded', function () {
-  const timerLabel = document.getElementById('timerLabel');
-  const timerBar = document.getElementById('timerBar');
-  const totalSeconds = 15 * 60;
-  let remaining = totalSeconds;
+    const timerLabel = document.getElementById('timerLabel');
+    const timerBar = document.getElementById('timerBar');
+    const totalSeconds = 15 * 60;
+    let remaining = totalSeconds;
 
-  function updateTimer() {
-    const min = Math.floor(remaining / 60);
-    const sec = remaining % 60;
-    timerLabel.textContent = `${min}:${sec.toString().padStart(2, '0')}`;
-    timerBar.style.width = `${(remaining / totalSeconds) * 100}%`;
-    if (remaining > 0) {
-      remaining--;
-    } else {
-      clearInterval(timerInterval);
-      timerLabel.textContent = "Time's up!";
-      timerBar.style.width = '0%';
+    function updateTimer() {
+
+        const min = Math.floor(remaining / 60);
+        const sec = remaining % 60;
+        timerLabel.textContent = `${min}:${sec.toString().padStart(2, '0')}`;
+        timerBar.style.width = `${(remaining / totalSeconds) * 100}%`;
+        
+        if (remaining > 0) {
+            remaining--;
+        } else {
+            clearInterval(timerInterval);
+            timerLabel.textContent = "Time's up!";
+            timerBar.style.width = '0%';
+            document.getElementById('taskA').style.display = 'none';
+            document.getElementById('taskB').style.display = 'none';
+        }
     }
-  }
 
-  updateTimer();
-  const timerInterval = setInterval(updateTimer, 1000);
+    updateTimer();
+    const timerInterval = setInterval(updateTimer, 1000);
 });
