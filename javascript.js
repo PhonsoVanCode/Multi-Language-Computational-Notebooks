@@ -54,7 +54,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 surveyLink.href = surveyLinkWithExtension;
             }  
             
-            document.getElementById('timerContainer').style.display = 'block';
+            document.getElementById('timer').style.display = 'block';
             
             if(taskType==='AB') {
                 document.getElementById('taskA').style.display = 'block';
