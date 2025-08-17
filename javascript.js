@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const extensionType = participantID.substring(2, 4);
 
     const surveyLinkWithoutExtension = `https://migroup.qualtrics.com/jfe/form/SV_a3pk2o0B2n1lAuG?participant_id=${encodeURIComponent(participantID)}`;
-    const surveyLinkWithExtension = `https://migroup.qualtrics.com/jfe/form/SV_0j2gO9KztrHKJ0O?participant_id=${encodeURIComponent(participantID)}`;
+    const surveyLinkWithExtension = `https://migroup.qualtrics.com/jfe/form/SV_4NiSDsE65KvyJH8?participant_id=${encodeURIComponent(participantID)}`;
     const surveyLinkPost = `https://migroup.qualtrics.com/jfe/form/SV_9X2uoov67AvuDf8?participant_id=${encodeURIComponent(participantID)}`;
 
     if (!participantID || participantID.length < 4) {
