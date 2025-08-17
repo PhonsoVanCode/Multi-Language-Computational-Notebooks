@@ -29,7 +29,8 @@ footer {
   display: none;
 }
 
-.leftAlignment {
+.taskDiv {
+  display: inline-block;
   text-align: left;
 }
 
