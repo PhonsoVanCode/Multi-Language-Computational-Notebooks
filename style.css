@@ -29,6 +29,10 @@ footer {
   display: none;
 }
 
+.leftAlignment {
+  text-align: left;
+}
+
 .surveyButton {
   display: block;
   margin: 30px auto 10px auto;
