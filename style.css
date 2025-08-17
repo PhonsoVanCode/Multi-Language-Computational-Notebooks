@@ -30,8 +30,8 @@ footer {
 }
 
 .taskDiv {
-  display: inline-block;
   text-align: left;
+  margin-left: 20%;
 }
 
 .surveyButton {
