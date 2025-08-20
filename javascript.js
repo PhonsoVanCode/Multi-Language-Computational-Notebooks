@@ -91,7 +91,9 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     surveyButton.onclick = function() {
-        surveyLink.click();
+        if (confirm("Do you really want to go to the Survey?")) {
+            surveyLink.click();
+        }
     }
 
 });
