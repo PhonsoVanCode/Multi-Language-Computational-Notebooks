@@ -101,7 +101,13 @@ document.addEventListener("DOMContentLoaded", function() {
 document.addEventListener('DOMContentLoaded', function () {
     const timerLabel = document.getElementById('timerLabel');
     const timerBar = document.getElementById('timerBar');
-    const totalSeconds = 15 * 60;
+
+    let totalSeconds = 15 * 60;
+
+    if (document.getElementById('withExtension').style.display === 'block') {
+        totalSeconds = 18 * 60;
+    }
+
     let remaining = totalSeconds;
 
     function updateTimer() {
