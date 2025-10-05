@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en"></html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Multi Language Computational Notebooks</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="javascript.js"></script>
+</head>
+
+<body>
+
+  <header>
+    <h1>Multi-Language Computational Notebooks</h1>
+  </header>
+
+  <main>
+    
+
+      <div id="withExtension" class="noneDisplayDiv">
+
+        Next, we kindly ask you to work on the following tasks.<br>
+        <br>
+        You have 15 minutes to complete the next task. Please do not feel rushed—there is no need to finish all tasks.<br>
+        <br>
+        For this task, please kindly make use of the provided extension during your work.<br>
+        <br>  
+        <strong>If the extension is not activated, please activate it in the Extension-Manager (puzzle piece on the left side) from your JupyterLab.</strong><br> 
+        <br>  
+        You have 3 additional minutes to geht familiar with the extension.
+
+        <div class="alignLeftDiv">   
+
+          <h1 id="guidelines-for-using-the-extension">Guidelines for Using the Extension</h1>
+          <ol>
+            <li>
+              In the RAW cell, describe the task in your natural language (e.g. german or english)<br>
+              <br>
+            </li>
+            <li>
+              Switch to a CODE cell to see your RAW cell input automatically translated into Python code. An explanation of the code will appear in the MARKDOWN cell.<br>
+              <br>
+            </li>
+            <li>
+              You can switch between cell types at any time. The content is saved in the notebook file's metadata.<br>
+              <br>
+            </li>
+            <li>
+              If you modify the RAW cell input, both the CODE and MARKDOWN cell contents will be regenerated.<br>
+              <br>
+            </li>
+          </ol>
+          <strong>HINT:</strong> Ensure you select a RAW cell before entering your task. New cells are CODE cells by default.<br>
+          <br>
+          <strong>HINT:</strong> Avoid switching the cell type and to another cell while it is being 'under heavy construction'.<br>
+          <br>
+
+        </div>
+
+        <iframe width="500" height="400" src="https://www.youtube.com/embed/v7EUCexJUSw" title="MLCN" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <br>
+        <a rel="noopener" target="_blank" href="https://www.youtube.com/watch?v=v7EUCexJUSw">Youtube Short with Explanation</a>
+          
+      </div>
+
+      <div id="withoutExtension" class="noneDisplayDiv"> 
+        Next, we kindly ask you to work on the following tasks.<br>
+        <br>
+        You have 15 minutes to complete the next task. Please do not feel rushed—there is no need to finish all tasks.<br>
+        <br>       
+        You are welcome to use the internet as well as language models such as ChatGPT to assist you while working on the tasks.<br>
+        <br>
+        <strong>If the extension is activated, please deactivate it in the Extension-Manager (puzzle piece on the left side) from your JupyterLab.</strong><br> 
+        <br>  
+      </div>
+
+      <div id="timer" class="noneDisplayDiv">
+        <div id="timerContainer">
+          <div id="timerLabel">15:00</div>
+          <div id="timerBarBg">
+            <div id="timerBar"></div>
+          </div>
+        </div>
+        <br>
+      </div>
+
+
+      <div id="taskA" class="noneDisplayDiv alignLeftDiv">     
+<h2 id="task-a-exploratory-data-analysis-of-weather-data">Task: Exploratory Data Analysis of Weather Data</h2>
+<p>You are provided with a CSV file containing daily weather measurements (weather.csv - date, temperature, precipitation, wind).</p>
+<h3 id="your-task-is-to-explore-the-data-and-identify-key-patterns-">Your task is to <strong>explore the data and identify key patterns</strong>.</h3>
+<p><strong>Note:</strong>  </p>
+<ul>
+<li>Use any Python data science libraries you prefer (e.g., pandas, matplotlib, seaborn).</li>
+<li>Document your steps and findings in a way that is understandable for someone new to the data.</li>
+<li>There is no need to finish every subtask; prioritize those you find most interesting or relevant.</li>
+</ul>
+<p>Follow these steps:</p>
+<ol>
+<li><p><strong>Load the Data</strong></p>
+<ul>
+<li>Import the CSV file into a pandas DataFrame.</li>
+</ul>
+</li>
+<li><p><strong>Visualize Temperature Over Time</strong></p>
+<ul>
+<li>Create a line plot displaying the temperature development over the recorded period.</li>
+<li>Label the axes appropriately.</li>
+</ul>
+</li>
+<li><p><strong>Analyze Relationship Between Temperature and Precipitation</strong></p>
+<ul>
+<li>Create a scatter plot to visualize the relationship between temperature and precipitation.</li>
+<li>Calculate and output the correlation coefficient between these two variables.</li>
+</ul>
+</li>
+<li><p><strong>Summarize Your Findings</strong></p>
+<ul>
+<li>Write a brief summary (in markdown or as cell output) describing:<ul>
+<li>Any patterns you observe in temperature over time</li>
+<li>The relationship (if any) between temperature and precipitation</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>Examine Outliers</strong></p>
+<ul>
+<li>Identify any temperature or precipitation outliers using appropriate methods (e.g., IQR, standard deviation, visualization).</li>
+<li>Comment on how these outliers might affect your analysis.</li>
+</ul>
+</li>
+<li><p><strong>Seasonal Trends</strong></p>
+<ul>
+<li>Group the data by season (e.g., winter, spring, summer, autumn) and calculate average temperature and precipitation per season.</li>
+<li>Visualize these seasonal averages using a bar plot.</li>
+</ul>
+</li>
+<li><p><strong>Missing Data Analysis</strong></p>
+<ul>
+<li>Check the dataset for missing values.</li>
+<li>If there are missing values, discuss and demonstrate at least one strategy for handling them.</li>
+</ul>
+</li>
+<li><p><strong>Wind Analysis</strong></p>
+<ul>
+<li>Explore possible relationships between wind and the other variables.</li>
+<li>(Optional) Create one visualization that helps to illustrate your findings.</li>
+</ul>
+</li>
+</ol>
+      </div>
+
+      <div id="taskB" class="noneDisplayDiv alignLeftDiv">
+<h2 id="building-and-interpreting-a-simple-classification-model">Task: Building and Interpreting a Simple Classification Model</h2>
+<p>You are provided with a small dataset for a classification task (the Iris dataset - iris.data (dataset), iris.names (description)).</p>
+<h3 id="your-objective-is-to-build-evaluate-and-interpret-a-simple-machine-learning-classifier-">Your objective is to <strong>build, evaluate, and interpret a simple machine learning classifier</strong>.</h3>
+<p><strong>Note:</strong></p>
+<ul>
+<li>You may use libraries such as pandas, scikit-learn, seaborn, matplotlib.</li>
+<li>Feel free to skip some steps if you run out of time; focus on the steps you feel are most important.</li>
+<li>Clearly mark which steps you completed and summarize your results for others.</li>
+</ul>
+<p>Follow these steps:</p>
+<ol>
+<li><p><strong>Load and Inspect the Data</strong></p>
+<ul>
+<li>Import the dataset into a pandas DataFrame.</li>
+<li>Display the first few rows and basic summary statistics.</li>
+</ul>
+</li>
+<li><p><strong>Data Preprocessing</strong></p>
+<ul>
+<li>Check for missing values and handle them as appropriate.</li>
+<li>Encode categorical variables if required.</li>
+</ul>
+</li>
+<li><p><strong>Train-Test Split</strong></p>
+<ul>
+<li>Split the data into training and test sets (e.g., 80% training, 20% test).</li>
+</ul>
+</li>
+<li><p><strong>Model Training</strong></p>
+<ul>
+<li>Train a classifier of your choice (e.g., Decision Tree, Logistic Regression) on the training data.</li>
+</ul>
+</li>
+<li><p><strong>Model Evaluation</strong></p>
+<ul>
+<li>Evaluate the model on the test set.</li>
+<li>Report accuracy (and, if possible, a confusion matrix).</li>
+<li>Interpret which classes are easiest/hardest to predict.</li>
+</ul>
+</li>
+<li><p><strong>Brief Documentation</strong></p>
+<ul>
+<li>Explain your main steps and findings using Markdown or cell output.</li>
+</ul>
+</li>
+<li><p><strong>Feature Importance</strong></p>
+<ul>
+<li>Analyze and display feature importances or coefficients from your model, if available.</li>
+<li>Briefly discuss which features are most relevant for the predictions.</li>
+</ul>
+</li>
+<li><p><strong>Hyperparameter Tuning</strong></p>
+<ul>
+<li>Try adjusting at least one model hyperparameter (e.g., max depth for a decision tree).</li>
+<li>Compare results with your original model.</li>
+</ul>
+</li>
+<li><p><strong>Visualization</strong></p>
+<ul>
+<li>Create at least one visualization to better understand the classification results or the data itself (e.g., scatter plot with classes, visualization of the decision boundary if relevant).</li>
+</ul>
+</li>
+<li><p><strong>Model Comparison</strong></p>
+<ul>
+<li>Train a second classifier (e.g., SVM, Random Forest, k-Nearest Neighbors).</li>
+<li>Compare performance between the two models and briefly discuss the results.</li>
+</ul>
+</li>
+<li><p><strong>Cross-Validation</strong></p>
+<ul>
+<li>(Advanced) Perform cross-validation to get a more robust estimate of the model’s performance.</li>
+<li>Report and interpret the results.</li>
+</ul>
+</li>
+</ol>
+      </div>
+
+      <div id="post" class="noneDisplayDiv">
+        Thank you for completing the third survey.<br>
+        <br>        
+        <strong>Now you can deinstall the extension in the Extension-Manager (puzzle piece on the left side) from your JupyterLab.</strong><br> 
+        <br>
+        In the last survey, we would like to ask a few questions regarding documentation.
+        <br>
+      </div>
+
+      <button class="surveyButton" id="surveyButton">Go To The Survey</button>
+      <a id="surveyLink"></a>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+
+    </p>
+
+  </main>
+
+  <footer>
+    <p>© 2025 Denny Steigmeier</p>
+  </footer>
+
+</body>
+
+</html>
